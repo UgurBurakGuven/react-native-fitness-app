@@ -1,12 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import {
+  KeyboardAvoidingView,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+  Platform,
+  TouchableOpacity,
+} from "react-native";
+import Task from "./components/TaskItem/Task";
+import Input from "./components/InputItem/Input";
+import Header from "./components/Header/header";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <View style={styles.tasksWrapper}>
+        <Header />
+        <View style={styles.items}>
+          <Task text={"Tast 1"} />
+          <Task text={"Tast 2"} />
+        </View>
+      </View>
+      <Input />
     </View>
   );
 }
@@ -14,8 +30,14 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#e8eaed",
+  },
+  tasksWrapper: {
+    width: "100%",
+    paddingTop: "40%",
+    paddingHorizontal: "5%",
+  },
+  items: {
+    marginTop: 30,
   },
 });
