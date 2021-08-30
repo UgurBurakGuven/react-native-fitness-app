@@ -3,8 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import styles from "./styles";
 
 type TaskItemProps = {
-  text: string;
-  key: number;
+  text: string | number;
 };
 
 function Task({ text }: TaskItemProps) {

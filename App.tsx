@@ -1,20 +1,12 @@
-import React, { Props, useState } from "react";
-import {
-  KeyboardAvoidingView,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-  Platform,
-  TouchableOpacity,
-} from "react-native";
+import React, { useState } from "react";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
 import Task from "./components/TaskItem/Task";
 import Input from "./components/InputItem/Input";
 import Header from "./components/Header/header";
 
 export default function App() {
   const [task, setTask] = useState<any>();
-  const [todo, setTodo] = useState<Array<string>>([]);
+  const [todo, setTodo] = useState<Array<string | number>>([]);
 
   const onChangeTask = (text: string) => {
     setTask(text);
@@ -25,13 +17,20 @@ export default function App() {
     setTask(null);
   };
 
+  const removeTask = (index: number) => {
+    const itemsCopy: any = [...todo];
+    itemsCopy.splice(index, 1);
+    setTodo(itemsCopy);
+  };
   return (
     <View style={styles.container}>
       <View style={styles.tasksWrapper}>
         <Header />
         <View style={styles.items}>
           {todo.map((item, index) => (
-            <Task key={index} text={item} />
+            <TouchableOpacity key={index} onPress={() => removeTask(index)}>
+              <Task text={item} />
+            </TouchableOpacity>
           ))}
         </View>
       </View>
