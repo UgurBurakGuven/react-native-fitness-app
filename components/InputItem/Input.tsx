@@ -6,18 +6,28 @@ import {
   KeyboardAvoidingView,
   Platform,
   TextInput,
+  TouchableOpacityProps,
   TouchableOpacity,
 } from "react-native";
 import styles from "./styles";
 
-function Input() {
+type InputItemProps = {
+  changeText: (val: string) => void;
+  pressButton: () => void;
+} & TouchableOpacityProps;
+
+function Input({ changeText, pressButton, ...otherProps }: InputItemProps) {
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
       style={styles.writeTaskWrapper}
     >
-      <TextInput style={styles.input} placeholder={"merhaba"} />
-      <TouchableOpacity>
+      <TextInput
+        style={styles.input}
+        placeholder={"merhaba"}
+        onChangeText={changeText}
+      />
+      <TouchableOpacity onPress={pressButton} {...otherProps}>
         <View style={styles.addWrapper}>
           <Text style={styles.addText}>+</Text>
         </View>

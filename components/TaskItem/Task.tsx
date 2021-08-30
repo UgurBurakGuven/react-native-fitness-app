@@ -4,6 +4,7 @@ import styles from "./styles";
 
 type TaskItemProps = {
   text: string;
+  key: number;
 };
 
 function Task({ text }: TaskItemProps) {

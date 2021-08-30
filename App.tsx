@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Props, useState } from "react";
 import {
   KeyboardAvoidingView,
   StyleSheet,
@@ -13,16 +13,29 @@ import Input from "./components/InputItem/Input";
 import Header from "./components/Header/header";
 
 export default function App() {
+  const [task, setTask] = useState<any>();
+  const [todo, setTodo] = useState<Array<string>>([]);
+
+  const onChangeTask = (text: string) => {
+    setTask(text);
+  };
+
+  const onChangeTodo = () => {
+    setTodo([...todo, task]);
+    setTask(null);
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.tasksWrapper}>
         <Header />
         <View style={styles.items}>
-          <Task text={"Tast 1"} />
-          <Task text={"Tast 2"} />
+          {todo.map((item, index) => (
+            <Task key={index} text={item} />
+          ))}
         </View>
       </View>
-      <Input />
+      <Input changeText={onChangeTask} pressButton={onChangeTodo} />
     </View>
   );
 }
