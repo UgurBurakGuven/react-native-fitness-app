@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ScrollView, StyleSheet, View } from "react-native";
+import { ScrollView, StyleSheet, View, Dimensions } from "react-native";
 import TodoItem, { Todo } from "./components/TaskItem/TodoItem";
 import Input from "./components/InputItem/Input";
 import Header from "./components/Header/header";
@@ -36,7 +36,11 @@ export default function App() {
       <View style={styles.tasksWrapper}>
         <Header />
         <View style={styles.items}>
-          <ScrollView style={styles.scrollView}>
+          <ScrollView
+            style={styles.scrollView}
+            decelerationRate={"fast"}
+            showsVerticalScrollIndicator={false}
+          >
             {todoList.map((todo, index) => (
               <TodoItem key={todo.id} todo={todo} removeTask={removeTask} />
             ))}
@@ -54,11 +58,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#e5eaea",
   },
   scrollView: {
-    maxHeight: "90%",
+    maxHeight: "100%",
   },
   tasksWrapper: {
     width: "100%",
     paddingTop: "30%",
+    paddingBottom: "50%",
     paddingHorizontal: "5%",
   },
   items: {
