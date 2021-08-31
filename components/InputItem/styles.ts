@@ -21,8 +21,8 @@ const styles = StyleSheet.create({
   addWrapper: {
     width: 60,
     height: 60,
-    backgroundColor: "#FFF",
-    borderRadius: 60,
+    backgroundColor: "#82d7f7",
+    borderRadius: 20,
     borderColor: "#C0C0C0",
     borderWidth: 1,
     justifyContent: "center",

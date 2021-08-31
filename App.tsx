@@ -1,37 +1,46 @@
 import React, { useState } from "react";
-import { StyleSheet, TouchableOpacity, View } from "react-native";
-import Task from "./components/TaskItem/Task";
+import { ScrollView, StyleSheet, View } from "react-native";
+import TodoItem, { Todo } from "./components/TaskItem/TodoItem";
 import Input from "./components/InputItem/Input";
 import Header from "./components/Header/header";
 
 export default function App() {
-  const [task, setTask] = useState<any>();
-  const [todo, setTodo] = useState<Array<string | number>>([]);
-
-  const onChangeTask = (text: string) => {
-    setTask(text);
-  };
+  const [text, setText] = useState<string>("");
+  const [todoList, setTodoList] = useState<Array<Todo>>([]);
 
   const onChangeTodo = () => {
-    setTodo([...todo, task]);
-    setTask(null);
+    setTodoList((currentTodoList) => [
+      ...currentTodoList,
+      { text, id: new Date().getTime() },
+    ]);
   };
 
-  const removeTask = (index: number) => {
-    const itemsCopy: any = [...todo];
-    itemsCopy.splice(index, 1);
-    setTodo(itemsCopy);
+  const onChangeTask = (text: string) => {
+    setText(text);
+  };
+  const removeTask = (id: number) => {
+    setTodoList((todoList) => {
+      const tempList = [...todoList];
+      const todo = tempList.find((o) => o.id === id);
+      if (todo) {
+        const index = tempList.indexOf(todo);
+        if (index > -1) {
+          tempList.splice(index, 1);
+        }
+      }
+      return tempList;
+    });
   };
   return (
     <View style={styles.container}>
       <View style={styles.tasksWrapper}>
         <Header />
         <View style={styles.items}>
-          {todo.map((item, index) => (
-            <TouchableOpacity key={index} onPress={() => removeTask(index)}>
-              <Task text={item} />
-            </TouchableOpacity>
-          ))}
+          <ScrollView style={styles.scrollView}>
+            {todoList.map((todo, index) => (
+              <TodoItem key={todo.id} todo={todo} removeTask={removeTask} />
+            ))}
+          </ScrollView>
         </View>
       </View>
       <Input changeText={onChangeTask} pressButton={onChangeTodo} />
@@ -42,11 +51,14 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#e8eaed",
+    backgroundColor: "#e5eaea",
+  },
+  scrollView: {
+    maxHeight: "90%",
   },
   tasksWrapper: {
     width: "100%",
-    paddingTop: "40%",
+    paddingTop: "30%",
     paddingHorizontal: "5%",
   },
   items: {

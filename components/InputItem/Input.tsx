@@ -11,12 +11,12 @@ import {
 } from "react-native";
 import styles from "./styles";
 
-type InputItemProps = {
+type InputProps = {
   changeText: (val: string) => void;
   pressButton: () => void;
 } & TouchableOpacityProps;
 
-function Input({ changeText, pressButton, ...otherProps }: InputItemProps) {
+function Input({ changeText, pressButton, ...otherProps }: InputProps) {
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
@@ -24,7 +24,7 @@ function Input({ changeText, pressButton, ...otherProps }: InputItemProps) {
     >
       <TextInput
         style={styles.input}
-        placeholder={"merhaba"}
+        placeholder={"Pleace Enter Task"}
         onChangeText={changeText}
       />
       <TouchableOpacity onPress={pressButton} {...otherProps}>

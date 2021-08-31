@@ -3,5 +3,5 @@ import { Text } from "react-native";
 import styles from "./styles";
 
 export default function Header() {
-  return <Text style={styles.sectionTitle}>Todays tasks</Text>;
+  return <Text style={styles.sectionTitle}>Todo List</Text>;
 }
