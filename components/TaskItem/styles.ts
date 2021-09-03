@@ -16,16 +16,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     flexWrap: "wrap",
   },
-  square: {
-    width: 24,
-    height: 24,
-    backgroundColor: "#55BCF6",
-    opacity: 0.4,
-    borderRadius: 5,
-    marginRight: 15,
-  },
+  square: { backgroundColor: "#55BCF6" },
   text: {
-    maxWidth: "80%",
+    maxWidth: "75%",
   },
   circular: {
     width: 12,
@@ -34,6 +27,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     borderWidth: 2,
   },
+  icons: { flexDirection: "row" },
 });
 
 export default styles;

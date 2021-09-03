@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { ScrollView, StyleSheet, View, Dimensions } from "react-native";
+import {
+  ScrollView,
+  StyleSheet,
+  View,
+  Dimensions,
+  Keyboard,
+} from "react-native";
 import TodoItem, { Todo } from "./components/TaskItem/TodoItem";
 import Input from "./components/InputItem/Input";
 import Header from "./components/Header/header";
@@ -8,7 +14,12 @@ export default function App() {
   const [text, setText] = useState<string>("");
   const [todoList, setTodoList] = useState<Array<Todo>>([]);
 
+  function keyboardDismiss() {
+    Keyboard.dismiss();
+  }
+
   const onChangeTodo = () => {
+    keyboardDismiss();
     setTodoList((currentTodoList) => [
       ...currentTodoList,
       { text, id: new Date().getTime() },
@@ -33,7 +44,7 @@ export default function App() {
   };
   return (
     <View style={styles.container}>
-      <View style={styles.tasksWrapper}>
+      <View style={styles.tasksWrapper} onTouchStart={() => keyboardDismiss()}>
         <Header />
         <View style={styles.items}>
           <ScrollView
