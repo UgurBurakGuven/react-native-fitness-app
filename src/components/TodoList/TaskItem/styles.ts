@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     flexWrap: "wrap",
   },
-  square: { backgroundColor: "#55BCF6" },
+  square: {},
   text: {
     maxWidth: "75%",
   },

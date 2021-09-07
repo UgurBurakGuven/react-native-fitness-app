@@ -1,83 +1,24 @@
-import React, { useState } from "react";
-import {
-  ScrollView,
-  StyleSheet,
-  View,
-  Dimensions,
-  Keyboard,
-} from "react-native";
-import TodoItem, { Todo } from "./components/TaskItem/TodoItem";
-import Input from "./components/InputItem/Input";
-import Header from "./components/Header/header";
+import * as React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { RootStackParamList } from "./src/screen/RootStackParams";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import TodoList from "./src/screen/TodoList/TodoList";
+import Home from "./src/screen/Home/Home";
+import StopWatch from "./src/screen/StopWatch/StopWatch";
 
-export default function App() {
-  const [text, setText] = useState<string>("");
-  const [todoList, setTodoList] = useState<Array<Todo>>([]);
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
-  function keyboardDismiss() {
-    Keyboard.dismiss();
-  }
-
-  const onChangeTodo = () => {
-    keyboardDismiss();
-    setTodoList((currentTodoList) => [
-      ...currentTodoList,
-      { text, id: new Date().getTime() },
-    ]);
-  };
-
-  const onChangeTask = (text: string) => {
-    setText(text);
-  };
-  const removeTask = (id: number) => {
-    setTodoList((todoList) => {
-      const tempList = [...todoList];
-      const todo = tempList.find((o) => o.id === id);
-      if (todo) {
-        const index = tempList.indexOf(todo);
-        if (index > -1) {
-          tempList.splice(index, 1);
-        }
-      }
-      return tempList;
-    });
-  };
+function App() {
   return (
-    <View style={styles.container}>
-      <View style={styles.tasksWrapper} onTouchStart={() => keyboardDismiss()}>
-        <Header />
-        <View style={styles.items}>
-          <ScrollView
-            style={styles.scrollView}
-            decelerationRate={"fast"}
-            showsVerticalScrollIndicator={false}
-          >
-            {todoList.map((todo, index) => (
-              <TodoItem key={todo.id} todo={todo} removeTask={removeTask} />
-            ))}
-          </ScrollView>
-        </View>
-      </View>
-      <Input changeText={onChangeTask} pressButton={onChangeTodo} />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="TodoList" component={TodoList} />
+        <Stack.Screen name="StopWatch" component={StopWatch} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#e5eaea",
-  },
-  scrollView: {
-    maxHeight: "100%",
-  },
-  tasksWrapper: {
-    width: "100%",
-    paddingTop: "30%",
-    paddingBottom: "50%",
-    paddingHorizontal: "5%",
-  },
-  items: {
-    marginTop: 30,
-  },
-});
+export default App;

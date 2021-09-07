@@ -1,14 +1,12 @@
 import React from "react";
-import { Keyboard } from "react-native";
-
 import {
-  View,
-  Text,
   KeyboardAvoidingView,
   Platform,
+  Text,
   TextInput,
-  TouchableOpacityProps,
   TouchableOpacity,
+  TouchableOpacityProps,
+  View,
 } from "react-native";
 import styles from "./styles";
 
