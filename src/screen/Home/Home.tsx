@@ -1,6 +1,10 @@
-import React from "react";
-import { FlatList, Text, View } from "react-native";
-import { MaterialCommunityIcons, Entypo } from "@expo/vector-icons";
+import React, { useEffect, useState } from "react";
+import { FlatList, ScrollView, Text, View } from "react-native";
+import {
+  MaterialCommunityIcons,
+  MaterialIcons,
+  Entypo,
+} from "@expo/vector-icons";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../RootStackParams";
 import { useNavigation } from "@react-navigation/native";
@@ -10,52 +14,85 @@ import { LinearGradient } from "expo-linear-gradient";
 type detailScreenProp = NativeStackNavigationProp<RootStackParamList, "Home">;
 
 function Home() {
-  const control: number = 0;
   const navigation = useNavigation<detailScreenProp>();
-  return (
-    <View style={styles.container}>
-      <View
-        onTouchStart={() => navigation.navigate("TodoList")}
-        style={styles.shadow}
-      >
-        <LinearGradient colors={["#70e1f5", "#ffd194"]} style={styles.square}>
-          <MaterialCommunityIcons name={"notebook-outline"} size={50} />
-          <Text style={styles.text}>Todo List</Text>
-        </LinearGradient>
-      </View>
-      <View
-        style={styles.shadow}
-        onTouchStart={() => navigation.navigate("StopWatch")}
-      >
-        <LinearGradient
-          colors={["#556270", "#ff6b6b", "#ff6b6b", "#ff6b6b"]}
-          style={styles.square}
-        >
-          <Entypo name={"stopwatch"} size={50} />
-          <Text style={styles.text}>Stop Watch</Text>
-        </LinearGradient>
-      </View>
-      <View style={styles.shadow}>
-        <LinearGradient
-          colors={["#9d50bb", "#9d50bb", "#6e48aa"]}
-          style={styles.square}
-        >
-          <MaterialCommunityIcons name={"notebook-outline"} size={50} />
-          <Text style={styles.text}>Todo List</Text>
-        </LinearGradient>
-      </View>
-      <View style={styles.shadow}>
-        <LinearGradient colors={["#ff4e50", "#f9d423"]} style={styles.square}>
-          <MaterialCommunityIcons name={"notebook-outline"} size={50} />
-          <Text style={styles.text}>Todo List</Text>
-        </LinearGradient>
-      </View>
 
-      <LinearGradient
-        colors={["#7df3ff", "#05e6fc"]}
-        style={styles.varyans}
-      ></LinearGradient>
-    </View>
+  return (
+    <ScrollView decelerationRate={"fast"} showsVerticalScrollIndicator={false}>
+      <View style={styles.container}>
+        <View style={styles.squareBox}>
+          <View
+            onTouchStart={() => navigation.navigate("TodoList")}
+            style={styles.shadow}
+          >
+            <LinearGradient
+              colors={["#70e1f5", "#ffd194"]}
+              style={styles.square}
+            >
+              <MaterialCommunityIcons name={"notebook-outline"} size={50} />
+              <Text style={styles.text}>Yapılacaklar Listesi</Text>
+            </LinearGradient>
+          </View>
+        </View>
+        <View style={styles.squareBox}>
+          <View
+            style={styles.shadow}
+            onTouchStart={() => navigation.navigate("StopWatch")}
+          >
+            <LinearGradient
+              colors={["#556270", "#ff6b6b", "#ff6b6b", "#ff6b6b"]}
+              style={styles.square}
+            >
+              <Entypo name={"stopwatch"} size={50} />
+              <Text style={styles.text}>Kronometre</Text>
+            </LinearGradient>
+          </View>
+        </View>
+
+        <View style={styles.squareBox}>
+          <View
+            style={styles.shadow}
+            onTouchStart={() => {
+              navigation.navigate("BodyIndexCalculator");
+            }}
+          >
+            <LinearGradient
+              colors={["#9d50bb", "#9d50bb", "#6e48aa"]}
+              style={styles.square}
+            >
+              <MaterialIcons name={"calculate"} size={50} />
+              <Text style={styles.text}>Vücut Kitle İndeksi</Text>
+            </LinearGradient>
+          </View>
+        </View>
+        <View style={styles.squareBox}>
+          <View
+            style={styles.shadow}
+            onTouchStart={() => navigation.navigate("CalorieCalculator")}
+          >
+            <LinearGradient
+              colors={["#ff4e50", "#f9d423"]}
+              style={styles.square}
+            >
+              <MaterialCommunityIcons name={"notebook-outline"} size={50} />
+              <Text style={styles.text}>Kalori İhtiyacı Hesaplama</Text>
+            </LinearGradient>
+          </View>
+        </View>
+
+        <View style={styles.varyans2}>
+          <LinearGradient
+            colors={["#7df3ff", "#05e6fc"]}
+            style={styles.varyans}
+          ></LinearGradient>
+        </View>
+        <View>
+          <LinearGradient
+            colors={["#7df3ff", "#05e6fc"]}
+            style={styles.varyans}
+          ></LinearGradient>
+        </View>
+      </View>
+    </ScrollView>
   );
 }
 
@@ -68,17 +105,22 @@ export const styles = StyleSheet.create({
     padding: 30,
     justifyContent: "center",
   },
-  square: {
-    width: 150,
+  squareBox: {
+    width: "40%",
     height: 150,
+    marginVertical: "5%",
+    marginHorizontal: "5%",
+  },
+  square: {
+    width: "100%",
+    height: "100%",
     borderRadius: 30,
-    marginHorizontal: 10,
-    marginVertical: 10,
     justifyContent: "center",
     alignItems: "center",
   },
+  varyans2: { width: "90%", height: 200, marginVertical: "10%" },
   varyans: {
-    width: 400,
+    width: "100%",
     height: 150,
     backgroundColor: "red",
     borderRadius: 30,

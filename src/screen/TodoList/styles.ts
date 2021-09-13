@@ -6,11 +6,11 @@ export const styles = StyleSheet.create({
     backgroundColor: "#e5eaea",
   },
   scrollView: {
-    maxHeight: "100%",
+    maxHeight: "95%",
   },
   tasksWrapper: {
     width: "100%",
-    paddingTop: "30%",
+    paddingTop: "20%",
     paddingBottom: "50%",
     paddingHorizontal: "5%",
   },

@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Spotify2",
-    "slug": "Spotify2",
+    "name": "fitness-app",
+    "slug": "fitness-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

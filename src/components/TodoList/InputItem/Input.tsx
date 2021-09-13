@@ -23,7 +23,7 @@ function Input({ changeText, pressButton, ...otherProps }: InputProps) {
     >
       <TextInput
         style={styles.input}
-        placeholder={"Pleace Enter Task"}
+        placeholder={"Lütfen notunuzu giriniz"}
         onChangeText={changeText}
       />
       <TouchableOpacity onPress={pressButton} {...otherProps}>
