@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import {
   View,
   Text,
-  TextInput,
   Button,
   ScrollView,
   Modal,
@@ -59,10 +58,8 @@ function CalorieCalculator() {
             <Picker
               selectedValue={selectedPicker}
               mode={"dropdown"}
-              onValueChange={(itemValue, itemIndex) =>
-                setSelectedPicker(itemValue)
-              }
-              style={{ width: 370, height: 50 }}
+              onValueChange={(itemValue) => setSelectedPicker(itemValue)}
+              style={{ width: 370, height: 20 }}
             >
               <Picker.Item label="fazla hareket etmiyorum" value="0" />
               <Picker.Item label="hafif egzersizler yapıyorum" value="1" />
@@ -160,9 +157,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  inContainer: {
-    paddingBottom: "20%",
-  },
+  inContainer: { paddingBottom: "20%" },
   gender: {
     marginTop: "10%",
     alignItems: "center",
@@ -189,13 +184,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   pickerTextView: {
-    marginTop: "7%",
+    marginTop: "5%",
   },
   pickerText: { fontSize: 20 },
 
   ageItems: {
-    marginTop: "15%",
-    marginVertical: "5%",
+    marginTop: "24%",
+    marginVertical: "2%",
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
@@ -207,7 +202,7 @@ const styles = StyleSheet.create({
   },
   heightNumericInput: { marginLeft: "20%" },
   sizeItems: {
-    marginVertical: "5%",
+    marginVertical: "2%",
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",

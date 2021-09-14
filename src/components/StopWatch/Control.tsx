@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { View, Text, Button } from "react-native";
+import React, { useEffect, useState } from "react";
+import { View, Button } from "react-native";
 import { StyleSheet } from "react-native";
 
 type Props = {
@@ -8,25 +8,43 @@ type Props = {
 
 function Control(props: Props) {
   const { setTimeInSeconds } = props;
-  const [intervalId, setIntervalId] = useState<number>(0);
+  const [intervalId, setIntervalId] = useState<NodeJS.Timer>();
 
-  const handlePlayButton = () => {
-    clearInterval(intervalId);
-    const interval: any = setInterval(() => {
+  useEffect(() => {
+    return () => clearInterval(intervalId!);
+  }, [intervalId]);
+
+  function handlePlayButton() {
+    if (intervalId) {
+      clearInterval(intervalId);
+    }
+    const interval: NodeJS.Timer = setInterval(() => {
       setTimeInSeconds((previousState: number) => previousState + 1);
     }, 10);
 
     setIntervalId(interval);
-  };
+  }
 
-  const handleStopButton = () => {
-    clearInterval(intervalId);
-  };
+  function handlePause() {
+    if (intervalId) {
+      clearInterval(intervalId);
+    }
+  }
 
-  const handleReset = () => {
-    clearInterval(intervalId);
+  function handleStop() {
+    if (intervalId) {
+      clearInterval(intervalId);
+    }
     setTimeInSeconds(0);
-  };
+  }
+
+  function handleRestart() {
+    if (intervalId) {
+      clearInterval(intervalId);
+    }
+    setTimeInSeconds(0);
+    handlePlayButton();
+  }
   return (
     <View style={styles.buttonContainer}>
       <View style={styles.button}>
@@ -35,12 +53,17 @@ function Control(props: Props) {
         </Button>
       </View>
       <View style={styles.button}>
-        <Button title={"Stop"} onPress={handleStopButton} color={"black"}>
+        <Button title={"Pause"} onPress={handlePause} color={"black"}>
           Stop
         </Button>
       </View>
       <View style={styles.button}>
-        <Button title={"Restart"} onPress={handleReset} color={"black"}>
+        <Button title={"Stop"} onPress={handleStop} color={"black"}>
+          Restart
+        </Button>
+      </View>
+      <View style={styles.button}>
+        <Button title={"Restart"} onPress={handleRestart} color={"black"}>
           Restart
         </Button>
       </View>

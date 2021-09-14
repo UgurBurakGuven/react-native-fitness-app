@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { FlatList, ScrollView, Text, View } from "react-native";
+import React from "react";
+import { ScrollView, Text, View } from "react-native";
 import {
   MaterialCommunityIcons,
   MaterialIcons,
@@ -84,8 +84,15 @@ function Home() {
             colors={["#7df3ff", "#05e6fc"]}
             style={styles.varyans}
           ></LinearGradient>
-        </View>
-        <View>
+          <LinearGradient
+            colors={["#7df3ff", "#05e6fc"]}
+            style={styles.varyans}
+          ></LinearGradient>
+          <LinearGradient
+            colors={["#7df3ff", "#05e6fc"]}
+            style={styles.varyans}
+          ></LinearGradient>
+
           <LinearGradient
             colors={["#7df3ff", "#05e6fc"]}
             style={styles.varyans}
@@ -102,8 +109,9 @@ export const styles = StyleSheet.create({
     height: "100%",
     flexDirection: "row",
     flexWrap: "wrap",
-    padding: 30,
+    padding: "8%",
     justifyContent: "center",
+    paddingBottom: "100%",
   },
   squareBox: {
     width: "40%",
@@ -130,6 +138,7 @@ export const styles = StyleSheet.create({
   text: {
     fontWeight: "bold",
     fontSize: 20,
+    textAlign: "center",
   },
   shadow: {
     shadowColor: "#000",

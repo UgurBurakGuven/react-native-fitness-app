@@ -4,7 +4,6 @@ import {
   StyleSheet,
   Text,
   View,
-  Keyboard,
   Alert,
   Modal,
   Pressable,
@@ -102,11 +101,12 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
     alignItems: "center",
+    paddingHorizontal: "10%",
   },
   weight: {
     alignItems: "center",
     justifyContent: "center",
-    marginTop: "20%",
+    marginTop: "15%",
   },
   label: { fontSize: 20, marginBottom: "5%" },
   weightInput: {
