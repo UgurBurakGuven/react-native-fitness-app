@@ -4,4 +4,7 @@ export type RootStackParamList = {
   StopWatch: undefined;
   BodyIndexCalculator: undefined;
   CalorieCalculator: undefined;
+  ProfileScreen: undefined;
+  ProfileEdit: undefined;
+  FoodCalorie: undefined;
 };

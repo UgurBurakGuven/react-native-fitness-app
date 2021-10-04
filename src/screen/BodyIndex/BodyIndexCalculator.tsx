@@ -34,9 +34,10 @@ function BodyIndexCalculator() {
             <Text style={styles.label}>Kilo (kg)</Text>
           </View>
           <NumericInput
+            rounded
             minValue={0}
-            inputStyle={{ width: 160 }}
-            containerStyle={{ width: 250 }}
+            totalWidth={240}
+            totalHeight={50}
             onChange={changeWeightState}
           />
         </View>
@@ -45,8 +46,9 @@ function BodyIndexCalculator() {
             <Text style={styles.label}>Boy (cm)</Text>
           </View>
           <NumericInput
-            inputStyle={{ width: 160 }}
-            containerStyle={{ width: 250 }}
+            rounded
+            totalWidth={240}
+            totalHeight={50}
             minValue={0}
             onChange={changeHeightState}
           />

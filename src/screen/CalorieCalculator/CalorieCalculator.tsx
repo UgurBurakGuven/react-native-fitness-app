@@ -76,6 +76,7 @@ function CalorieCalculator() {
           <Text style={styles.ageItemText}>Yaş: </Text>
           <View style={styles.ageNumericInput}>
             <NumericInput
+              rounded
               minValue={0}
               onChange={(value) => {
                 setAge(value);
@@ -87,6 +88,7 @@ function CalorieCalculator() {
           <Text style={styles.sizeItemText}>Boy: </Text>
           <View style={styles.heightNumericInput}>
             <NumericInput
+              rounded
               minValue={0}
               onChange={(value) => {
                 setHeight(value);
@@ -98,6 +100,7 @@ function CalorieCalculator() {
           <Text style={styles.sizeItemText}>Kilo: </Text>
           <View style={styles.heightNumericInput}>
             <NumericInput
+              rounded
               minValue={0}
               onChange={(value) => {
                 setWeight(value);

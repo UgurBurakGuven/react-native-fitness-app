@@ -7,6 +7,9 @@ import Home from "./src/screen/Home/Home";
 import StopWatch from "./src/screen/StopWatch/StopWatch";
 import BodyIndexCalculator from "./src/screen/BodyIndex/BodyIndexCalculator";
 import CalorieCalculator from "./src/screen/CalorieCalculator/CalorieCalculator";
+import Profile from "./src/screen/Profile/Profile";
+import ProfileEdit from "./src/screen/Profile/ProfileEdit";
+import FoodCalorie from "./src/screen/FoodCalorie/foodCalorie";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -34,7 +37,26 @@ function App() {
           options={{ title: "Kalori ihtiyacı " }}
           component={CalorieCalculator}
         />
-        <Stack.Screen name="StopWatch" component={StopWatch} />
+        <Stack.Screen
+          name="StopWatch"
+          options={{ title: "Kronometre" }}
+          component={StopWatch}
+        />
+        <Stack.Screen
+          name="ProfileScreen"
+          options={{ title: "ProfilScreen" }}
+          component={Profile}
+        />
+        <Stack.Screen
+          name="ProfileEdit"
+          options={{ title: "ProfilEdit" }}
+          component={ProfileEdit}
+        />
+        <Stack.Screen
+          name="FoodCalorie"
+          options={{ title: "ProfilEdit" }}
+          component={FoodCalorie}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

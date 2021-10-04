@@ -21,6 +21,20 @@ function Home() {
       <View style={styles.container}>
         <View style={styles.squareBox}>
           <View
+            style={styles.shadow}
+            onTouchStart={() => navigation.navigate("ProfileScreen")}
+          >
+            <LinearGradient
+              colors={["#ff4e50", "#f9d423"]}
+              style={styles.square}
+            >
+              <MaterialCommunityIcons name={"notebook-outline"} size={50} />
+              <Text style={styles.text}>Profil</Text>
+            </LinearGradient>
+          </View>
+        </View>
+        <View style={styles.squareBox}>
+          <View
             onTouchStart={() => navigation.navigate("TodoList")}
             style={styles.shadow}
           >
@@ -47,7 +61,6 @@ function Home() {
             </LinearGradient>
           </View>
         </View>
-
         <View style={styles.squareBox}>
           <View
             style={styles.shadow}
@@ -74,11 +87,24 @@ function Home() {
               style={styles.square}
             >
               <MaterialCommunityIcons name={"notebook-outline"} size={50} />
-              <Text style={styles.text}>Kalori İhtiyacı Hesaplama</Text>
+              <Text style={styles.text}>Kalori ihtiyacı hesaplama</Text>
             </LinearGradient>
           </View>
         </View>
-
+        <View style={styles.squareBox}>
+          <View
+            style={styles.shadow}
+            onTouchStart={() => navigation.navigate("FoodCalorie")}
+          >
+            <LinearGradient
+              colors={["#aa4f50", "#a9d423"]}
+              style={styles.square}
+            >
+              <MaterialCommunityIcons name={"notebook-outline"} size={50} />
+              <Text style={styles.text}>Besin Değeri Hesaplama</Text>
+            </LinearGradient>
+          </View>
+        </View>
         <View style={styles.varyans2}>
           <LinearGradient
             colors={["#7df3ff", "#05e6fc"]}
