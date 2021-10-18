@@ -7,4 +7,5 @@ export type RootStackParamList = {
   ProfileScreen: undefined;
   ProfileEdit: undefined;
   FoodCalorie: undefined;
+  MealList: undefined;
 };

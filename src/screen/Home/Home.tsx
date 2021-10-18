@@ -22,7 +22,7 @@ function Home() {
         <View style={styles.squareBox}>
           <View
             style={styles.shadow}
-            onTouchStart={() => navigation.navigate("ProfileScreen")}
+            onTouchEnd={() => navigation.navigate("ProfileScreen")}
           >
             <LinearGradient
               colors={["#ff4e50", "#f9d423"]}
@@ -35,7 +35,7 @@ function Home() {
         </View>
         <View style={styles.squareBox}>
           <View
-            onTouchStart={() => navigation.navigate("TodoList")}
+            onTouchEnd={() => navigation.navigate("TodoList")}
             style={styles.shadow}
           >
             <LinearGradient
@@ -50,7 +50,7 @@ function Home() {
         <View style={styles.squareBox}>
           <View
             style={styles.shadow}
-            onTouchStart={() => navigation.navigate("StopWatch")}
+            onTouchEnd={() => navigation.navigate("StopWatch")}
           >
             <LinearGradient
               colors={["#556270", "#ff6b6b", "#ff6b6b", "#ff6b6b"]}
@@ -64,7 +64,7 @@ function Home() {
         <View style={styles.squareBox}>
           <View
             style={styles.shadow}
-            onTouchStart={() => {
+            onTouchEnd={() => {
               navigation.navigate("BodyIndexCalculator");
             }}
           >
@@ -80,7 +80,7 @@ function Home() {
         <View style={styles.squareBox}>
           <View
             style={styles.shadow}
-            onTouchStart={() => navigation.navigate("CalorieCalculator")}
+            onTouchEnd={() => navigation.navigate("CalorieCalculator")}
           >
             <LinearGradient
               colors={["#ff4e50", "#f9d423"]}
@@ -94,7 +94,7 @@ function Home() {
         <View style={styles.squareBox}>
           <View
             style={styles.shadow}
-            onTouchStart={() => navigation.navigate("FoodCalorie")}
+            onTouchEnd={() => navigation.navigate("FoodCalorie")}
           >
             <LinearGradient
               colors={["#aa4f50", "#a9d423"]}
@@ -106,19 +106,6 @@ function Home() {
           </View>
         </View>
         <View style={styles.varyans2}>
-          <LinearGradient
-            colors={["#7df3ff", "#05e6fc"]}
-            style={styles.varyans}
-          ></LinearGradient>
-          <LinearGradient
-            colors={["#7df3ff", "#05e6fc"]}
-            style={styles.varyans}
-          ></LinearGradient>
-          <LinearGradient
-            colors={["#7df3ff", "#05e6fc"]}
-            style={styles.varyans}
-          ></LinearGradient>
-
           <LinearGradient
             colors={["#7df3ff", "#05e6fc"]}
             style={styles.varyans}

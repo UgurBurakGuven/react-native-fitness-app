@@ -1,0 +1,264 @@
+[
+  {
+    "id": 1,
+    "name": "Antrikot",
+    "foodCalorie": 121,
+    "weight" : "100g",
+    "subtitle": "121 Kalori"
+  },
+  {
+    "id": 2,
+    "name": "Biftek Döş",
+    "foodCalorie": 242,
+    "weight" : "100g",
+    "subtitle": "242 Kalori"
+  },
+  {
+    "id": 3,
+    "name": "Bonfile",
+    "foodCalorie": 138,
+    "weight" : "100g",
+    "subtitle": "138 Kalori"
+  },
+  {
+    "id": 4,
+    "name": "Dana Kıyması",
+    "foodCalorie": 246,
+    "weight" : "100g",
+    "subtitle": "246 Kalori"
+  },
+  {
+    "id": 5,
+    "name": "Devekuşu",
+    "foodCalorie": 145,
+    "weight" : "100g",
+    "subtitle": "145 Kalori"
+  },
+  {
+    "id": 6,
+    "name": "Domuz Eti",
+    "foodCalorie": 196,
+    "weight" : "100g",
+    "subtitle": "196 Kalori"
+  },
+  {
+    "id": 7,
+    "name": "Fleminyon",
+    "foodCalorie": 267,
+    "weight" : "100g",
+    "subtitle": "267 Kalori"
+  },
+  {
+    "id": 8,
+    "name": "Hindi",
+    "foodCalorie": 189,
+    "weight" : "100g",
+    "subtitle": "189 Kalori"
+  },
+  {
+    "id": 9,
+    "name": "Hindi Göğsü",
+    "foodCalorie": 135,
+    "weight" : "100g",
+    "subtitle": "135 Kalori"
+  },{
+    "id": 10,
+    "name": "Hindi Kanadı",
+    "foodCalorie": 221,
+    "weight" : "100g",
+    "subtitle": "221 Kalori"
+  },{
+    "id": 11,
+    "name": "Hindi Steak",
+    "foodCalorie": 189,
+    "weight" : "100g",
+    "subtitle": "189 Kalori"
+  },{
+    "id": 12,
+    "name": "Kaburga Rosto",
+    "foodCalorie": 333,
+    "weight" : "100g",
+    "subtitle": "333 Kalori"
+  },{
+    "id": 13,
+    "name": "Kontrfile",
+    "foodCalorie": 163,
+    "weight" : "100g",
+    "subtitle": "163 Kalori"
+  },{
+    "id": 14,
+    "name": "Kuzu İncik",
+    "foodCalorie": 201,
+    "weight" : "100g",
+    "subtitle": "201 Kalori"
+  },
+  {
+    "id": 15,
+    "name": "Kuzu Pirzola",
+    "foodCalorie": 276,
+    "weight" : "100g",
+    "subtitle": "276 Kalori"
+  }, {
+    "id": 16,
+    "name": "Rozbif",
+    "foodCalorie": 140,
+    "weight" : "100g",
+    "subtitle": "140 Kalori"
+  }, {
+    "id": 17,
+    "name": "Sığır Eti",
+    "foodCalorie": 248,
+    "weight" : "100g",
+    "subtitle": "248 Kalori"
+  }, {
+    "id": 18,
+    "name": "Sığır Filetosu",
+    "foodCalorie": 218,
+    "weight" : "100g",
+    "subtitle": "218 Kalori"
+  }, {
+    "id": 19,
+    "name": "Sığır Kaburgası",
+    "foodCalorie": 238,
+    "weight" : "100g",
+    "subtitle": "238 Kalori"
+  }, {
+    "id": 20,
+    "name": "Tavuk",
+    "foodCalorie": 219,
+    "weight" : "100g",
+    "subtitle": "219 Kalori"
+  }, {
+    "id": 21,
+    "name": "Tavuk Butu",
+    "foodCalorie": 174,
+    "weight" : "100g",
+    "subtitle": "174 Kalori"
+  }, {
+    "id": 22,
+    "name": "Tavuk Ciğeri",
+    "foodCalorie": 167,
+    "weight" : "100g",
+    "subtitle": "167 Kalori"
+  }, {
+    "id": 23,
+    "name": "Tavuk Eti",
+    "foodCalorie": 172,
+    "weight" : "100g",
+    "subtitle": "172 Kalori"
+  }, {
+    "id": 24,
+    "name": "Kuzu Göğsü",
+    "foodCalorie": 172,
+    "weight" : "100g",
+    "subtitle": "172 Kalori"
+  }, {
+    "id": 25,
+    "name": "Tavuk Kanadı",
+    "foodCalorie": 266,
+    "weight" : "100g",
+    "subtitle": "266 Kalori"
+  }, {
+    "id": 26,
+    "name": "Ördek",
+    "foodCalorie": 337,
+    "weight" : "100g",
+    "subtitle": "337 Kalori"
+  }, {
+    "id": 27,
+    "name": "Şinitzel",
+    "foodCalorie": 156,
+    "weight" : "100g",
+    "subtitle": "156 Kalori"
+  }, {
+    "id": 28,
+    "name": "Bıldırcın",
+    "foodCalorie": 227,
+    "weight" : "100g",
+    "subtitle": "227 Kalori"
+  }, {
+    "id": 29,
+    "name": "Cheddar",
+    "foodCalorie": 403,
+    "weight" : "100g",
+    "subtitle": "403 Kalori"
+  }, {
+    "id": 30,
+    "name": "Dilimlenmiş Peynir",
+    "foodCalorie": 357,
+    "weight" : "100g",
+    "subtitle": "357 Kalori"
+  }, {
+    "id": 31,
+    "name": "Eski Kaşar Peynir",
+    "foodCalorie": 435,
+    "weight" : "100g",
+    "subtitle": "435 Kalori"
+  }, {
+    "id": 32,
+    "name": "Füme Peynir",
+    "foodCalorie": 410,
+    "weight" : "100g",
+    "subtitle": "410 Kalori"
+  }, {
+    "id": 33,
+    "name": "Kaşar Peyniri",
+    "foodCalorie": 337,
+    "weight" : "100g",
+    "subtitle": "337 Kalori"
+  }, {
+    "id": 34,
+    "name": "Mozarella",
+    "foodCalorie": 280,
+    "weight" : "100g",
+    "subtitle": "280 Kalori"
+  }, {
+    "id": 35,
+    "name": "Tulum Peyniri",
+    "foodCalorie": 363,
+    "weight" : "100g",
+    "subtitle": "363 Kalori"
+  }, {
+    "id": 36,
+    "name": "Krem Peynir",
+    "foodCalorie": 342,
+    "weight" : "100g",
+    "subtitle": "342 Kalori"
+  }, {
+    "id": 37,
+    "name": "Labne Peyniri",
+    "foodCalorie": 63,
+    "weight" : "100g",
+    "subtitle": "63 Kalori"
+  }, {
+    "id": 38,
+    "name": "Maskarpone",
+    "foodCalorie": 450,
+    "weight" : "100g",
+    "subtitle": "450 Kalori"
+  }, {
+    "id": 39,
+    "name": "Hellim",
+    "foodCalorie": 321,
+    "weight" : "100g",
+    "subtitle": "321 Kalori"
+  }, {
+    "id": 40,
+    "name": "Keçi Peyniri",
+    "foodCalorie": 364,
+    "weight" : "100g",
+    "subtitle": "364 Kalori"
+  }, {
+    "id": 41,
+    "name": "Ayran",
+    "foodCalorie": 34,
+    "weight" : "100g",
+    "subtitle": "34 Kalori"
+  }, {
+    "id": 42,
+    "name": "Az Yağlı Süt",
+    "foodCalorie": 35,
+    "weight" : "100g",
+    "subtitle": "35 Kalori"
+  }
+]

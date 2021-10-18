@@ -10,6 +10,7 @@ import CalorieCalculator from "./src/screen/CalorieCalculator/CalorieCalculator"
 import Profile from "./src/screen/Profile/Profile";
 import ProfileEdit from "./src/screen/Profile/ProfileEdit";
 import FoodCalorie from "./src/screen/FoodCalorie/foodCalorie";
+import MealList from "./src/screen/MealList/MealList";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -29,12 +30,12 @@ function App() {
         />
         <Stack.Screen
           name="BodyIndexCalculator"
-          options={{ title: "Vücut kitle indeksi" }}
+          options={{ title: "Vücut kitle indeksi hesaplama" }}
           component={BodyIndexCalculator}
         />
         <Stack.Screen
           name="CalorieCalculator"
-          options={{ title: "Kalori ihtiyacı " }}
+          options={{ title: "Kalori ihtiyacı hesaplama " }}
           component={CalorieCalculator}
         />
         <Stack.Screen
@@ -44,18 +45,23 @@ function App() {
         />
         <Stack.Screen
           name="ProfileScreen"
-          options={{ title: "ProfilScreen" }}
+          options={{ title: "Profil" }}
           component={Profile}
         />
         <Stack.Screen
           name="ProfileEdit"
-          options={{ title: "ProfilEdit" }}
+          options={{ title: "Profil düzenleme" }}
           component={ProfileEdit}
         />
         <Stack.Screen
           name="FoodCalorie"
-          options={{ title: "ProfilEdit" }}
+          options={{ title: "Besin değeri hesaplama" }}
           component={FoodCalorie}
+        />
+        <Stack.Screen
+          name="MealList"
+          options={{ title: "Beslenme Programı" }}
+          component={MealList}
         />
       </Stack.Navigator>
     </NavigationContainer>

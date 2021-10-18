@@ -3,6 +3,9 @@ import { View, StyleSheet, Text, TextInput } from "react-native";
 import { Button } from "react-native-elements";
 import NumericInput from "react-native-numeric-input";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { RootStackParamList } from "../RootStackParams";
+import { useNavigation } from "@react-navigation/native";
 
 export type Profile = {
   name: string;
@@ -10,7 +13,11 @@ export type Profile = {
   weight: number;
   height: number;
 };
+type detailScreenProp = NativeStackNavigationProp<RootStackParamList, "Home">;
+
 function ProfileEdit() {
+  const navigation = useNavigation<detailScreenProp>();
+
   const [name, setName] = useState("");
   const [age, setAge] = useState(0);
   const [weight, setWeight] = useState(0);
@@ -24,6 +31,7 @@ function ProfileEdit() {
   async function saveProfile() {
     const newProfile = { age, weight, height, name };
     await storeData(newProfile);
+    navigation.navigate("ProfileScreen");
   }
 
   return (
@@ -36,6 +44,7 @@ function ProfileEdit() {
             setName(value);
           }}
           style={{
+            textAlign: "center",
             borderWidth: 1,
             borderRadius: 10,
             width: 200,
@@ -44,7 +53,7 @@ function ProfileEdit() {
             maxHeight: 50,
           }}
           value={name}
-        ></TextInput>
+        />
       </View>
       <View style={styles.Items}>
         <Text style={styles.Text}>Yaşınız = </Text>
@@ -92,7 +101,7 @@ function ProfileEdit() {
         />
       </View>
       <View style={styles.button}>
-        <Button title={"submit"} onPress={saveProfile} />
+        <Button title={"GÜNCELLE"} onPress={saveProfile} />
       </View>
     </View>
   );
